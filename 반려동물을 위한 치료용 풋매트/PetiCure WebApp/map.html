@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+    https://yesol-han.github.io/PetiCure/
+-->
+<html>
+
+<head>
+    <title>PetiCure</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <a href="index.html" class="logo"><strong>PetiCure</strong></a>
+            <nav>
+                <a href="#menu">메뉴</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="actions stacked">
+                <li><a href="./index.html" class="button primary fit">Home</a></li>
+            </ul>
+            <ul class="links">
+                <li><a href="./item_use.html">메트 사용하기</a></li>
+                <li><a href="./pet_diary.html">반려동물 일기</a></li>
+                <li><a href="./map.html">생활 지도</a></li>
+                <li><a href="./shopping_medi.html">약 쇼핑</a></li>
+                <li><a href="./apayo.html">아파요</a></li>
+            </ul>
+            <ul class="actions stacked">
+                <li><a href="./login.html" class="button fit">로그아웃</a></li>
+            </ul>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; PetiCure</li>
+                        <li>Design: <a href="https://html5up.net">Yesol-Han</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </nav>
+
+        <script language="javascript">
+            function backCh(color) {
+                //alert(document.getElementById("main").style.backgroundImage);
+                //alert(color);
+                if (color == "8") {
+                    if (document.getElementById("buttonlist1").style.visibility == 'hidden') {
+                        for (i = 1; i < 8; i++) {
+                            document.getElementById("buttonlist" + i).style.visibility = 'visible';
+                        }
+                        document.getElementById("buttonlist").textContent = "모두표시";
+                    } else {
+                        for (i = 1; i < 8; i++) {
+                            document.getElementById("buttonlist" + i).style.visibility = 'hidden';
+                        }
+                        document.getElementById("buttonlist").textContent = "선택표시";
+                    }
+                }
+                if (color == "8") {
+                    color = "0";
+                }
+                document.getElementById("main").style.backgroundImage = "url('./images/map_" + color + ".png')";
+            }
+        </script>
+        <!-- Main -->
+        <div id="main" style="background-image: url('./images/map_0.png');
+        background-size: auto 45em; background-repeat:no-repeat; background-position: center; min-height: 45em;">
+            <div>
+                <ul class="actions small" style="display: block; margin-bottom: 2em;">
+                    <li><a id="buttonlist" href="#" onclick="backCh('0')" ondblclick="backCh('8')" class="button primary small" style="width:10em; background-color: #242943ce; color: aliceblue; margin-bottom: 1em;">모두표시</a></li>
+                    <li><a id="buttonlist1" href="#" onclick="backCh('1')" class="button primary small" style="width:10em; background-color: #242943ce; color: aliceblue; margin-bottom: 1em">산책코스</a></li>
+                    <li><a id="buttonlist2" href="#" onclick="backCh('2')" class="button primary small" style="width:10em; background-color: #242943ce; color: aliceblue; margin-bottom: 1em">병 &nbsp; &nbsp; 원&nbsp;</a></li>
+                    <li><a id="buttonlist3" href="#" onclick="backCh('3')" class="button primary small" style="width:10em; background-color: #242943ce; color: aliceblue; margin-bottom: 1em">유 치 원&nbsp;</a></li>
+                    <li><a id="buttonlist4" href="#" onclick="backCh('4')" class="button primary small" style="width:10em; background-color: #242943ce; color: aliceblue; margin-bottom: 1em">미 용 실&nbsp;</a></li>
+                    <li><a id="buttonlist5" href="#" onclick="backCh('5')" class="button primary small" style="width:10em; background-color: #242943ce; color: aliceblue; margin-bottom: 1em">애견마트</a></li>
+                    <li><a id="buttonlist6" href="#" onclick="backCh('6')" class="button primary small" style="width:10em; background-color: #242943ce; color: aliceblue; margin-bottom: 1em">애견호텔</a></li>
+                    <li><a id="buttonlist7" href="#" onclick="backCh('7')" class="button primary small" style="width:10em; background-color: #242943ce; color: aliceblue; margin-bottom: 1em">즐겨찾기</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

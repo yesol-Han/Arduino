@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>PetiCure</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <a href="index.html" class="logo"><strong>PetiCure</strong></a>
+            <nav>
+                <a href="#menu">메뉴</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="actions stacked">
+                <li><a href="./index.html" class="button primary fit">Home</a></li>
+            </ul>
+            <ul class="links">
+                <li><a href="./item_use.html">메트 사용하기</a></li>
+                <li><a href="./pet_diary.html">반려동물 일기</a></li>
+                <li><a href="./map.html">생활 지도</a></li>
+                <li><a href="./shopping_medi.html">약 쇼핑</a></li>
+                <li><a href="./apayo.html">아파요</a></li>
+            </ul>
+            <ul class="actions stacked">
+                <li><a href="./login.html" class="button fit">로그아웃</a></li>
+            </ul>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; PetiCure</li>
+                        <li>Design: <a href="https://html5up.net">Yesol-Han</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Content -->
+                <section>
+                    <h2>PetiCure 제어하기</h2>
+
+                    <!-- 줄 긋기 -->
+                    <hr class="major" />
+
+                    <!-- 버튼 -->
+                    <div class="row gtr-200">
+                        <div class="col-6 col-12-medium">
+                            <h4 id="testh4">약 잔량: 조회중입니다..(5초 대기)</h4>
+                            <h4 id="testh5">약 잔량: 조회중입니다..(5초 대기)</h4>
+                            <h4 id="testh6">약 잔량: 조회중입니다..(5초 대기)</h4>
+                        </div>
+                    </div>
+
+                    <hr class="major" />
+
+                    <div class="row gtr-200">
+                        <div class="col-6 col-12-medium">
+                            <ul class="actions small">
+                                <li><a href="javascript:doDisplay(0);" class="button primary">바로 분사하기</a></li>
+                                <li><a href="javascript:doDisplay(1);" class="button">예약 분사하기</a></li>
+                            </ul>
+
+                            <!-- Form -->
+                            <form method="post" action="#" id="direct_spread">
+                                <div class="row gtr-uniform">
+                                    <!-- Break -->
+                                    <div class="col-6 col-12">
+                                        <select name="demo-category" id="demo-category">
+                                            <option value="">- 선택 -</option>
+                                            <option value="1">medi1: 터비덤 (습진 치료제)</option>
+                                            <option value="1">medi2: 비타도그 (비타민제)</option>
+                                            <option value="1">medi3: 물 (씻기용)</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Break -->
+                                    <div class="col-12">
+                                        <ul class="actions">
+                                            <li><input onclick="spread_clicked(1);" type="reset" value="분사하기" /></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- Form -->
+                            <form method="post" id="reserve_spread" hidden>
+                                <!-- action="#"  -->
+                                <div class="row gtr-uniform">
+                                    <div class="col-6 col-12-small">
+                                        <input type="checkbox" id="demo-human" name="demo-human">
+                                        <label for="demo-human">월</label>
+                                        <input type="checkbox" id="demo-copy" name="demo-copy">
+                                        <label for="demo-copy">화</label>
+                                        <input type="checkbox" id="demo-human2" name="demo-human2">
+                                        <label for="demo-human2">수</label>
+                                        <input type="checkbox" id="demo-human3" name="demo-human3">
+                                        <label for="demo-human3">목</label>
+                                        <input type="checkbox" id="demo-human4" name="demo-human4">
+                                        <label for="demo-human4">금</label>
+                                        <input type="checkbox" id="demo-human5" name="demo-human5">
+                                        <label for="demo-human5">토</label>
+                                        <input type="checkbox" id="demo-human6" name="demo-human6">
+                                        <label for="demo-human6">일</label>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input placeholder="시간입력" type="time" name="minute" id="minute" value="시간입력" />
+                                    </div>
+                                    <!-- Break -->
+                                    <div class="col-6 col-12-xsmall">
+                                        <select name="demo-category" id="demo-category">
+											<option value="">- 종류 선택 -</option>
+											<option value="1">medi1: 터비덤 (습진 치료제)</option>
+                                            <option value="1">medi2: 비타도그 (비타민제)</option>
+                                            <option value="1">medi3: 물 (씻기용)</option>
+										</select>
+                                    </div>
+                                    <!-- Break -->
+                                    <div class="col-12">
+                                        <textarea name="demo-message" id="demo-message" placeholder="메모" rows="2"></textarea>
+                                    </div>
+                                    <!-- Break -->
+                                    <div class="col-12">
+                                        <ul class="actions">
+                                            <li><input onclick="spread_clicked(2);" type="reset" value="예약하기" class="primary" /></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <p id="testp"></p>
+
+                        </div>
+                    </div>
+
+                    <!-- 줄 긋기 -->
+                    <hr class="major" />
+
+                    <div class="row gtr-200">
+                        <div class="col-6 col-12-medium">
+                            <!-- Table -->
+                            <h4>약 분사시간 예약 리스트</h4>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>요일</th>
+                                            <th>시간</th>
+                                            <th>약 종류</th>
+                                            <th>메모</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" id="a" name="a"><label for="a"></label></td>
+                                            <td>월,목</td>
+                                            <td>PM 8:00</td>
+                                            <td>물</td>
+                                            <td>아빠 산책</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" id="b" name="b"><label for="b"></label></td>
+                                            <td>화,금</td>
+                                            <td>PM 5:00</td>
+                                            <td>물</td>
+                                            <td>나 산책</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" id="c" name="c"><label for="c"></label></td>
+                                            <td>수,토,일</td>
+                                            <td>PM 3:00</td>
+                                            <td>물</td>
+                                            <td>엄마 산책</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" id="d" name="d"><label for="d"></label></td>
+                                            <td>월-일</td>
+                                            <td>AM 10:00</td>
+                                            <td>터비덤</td>
+                                            <td>아침약</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" id="e" name="e"><label for="e"></label></td>
+                                            <td>월-일</td>
+                                            <td>PM 6:00</td>
+                                            <td>비타도그</td>
+                                            <td>저녁약</td>
+                                        </tr>
+                                        <tr id="test10">
+                                            <td><input type="checkbox" id="f" name="f"><label for="f"></label></td>
+                                            <td>월,화</td>
+                                            <td>AM 10:50</td>
+                                            <td>물</td>
+                                            <td>Testtt</td>
+                                        </tr>
+
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><a onclick="delete_btn();">삭제</a></td>
+                                            <td colspan="2"></td>
+                                            <td id="here2">6개</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <p id="delete"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        var settings1 = {
+            "url": "http://203.253.128.161:7579/Mobius/PetMat/user1/medi1/la",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Accept": "application/json",
+                "X-M2M-RI": "12345",
+                "X-M2M-Origin": "AA"
+            },
+        };
+
+        setInterval(function() {
+            $.ajax(settings1).done(function(response) {
+                $('#testh4').text('터비덤 잔량 : ' + response["m2m:cin"]["con"] + '% 남아 있습니다.')
+            });
+        }, 5000);
+
+        var settings2 = {
+            "url": "http://203.253.128.161:7579/Mobius/PetMat/user1/medi2/la",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Accept": "application/json",
+                "X-M2M-RI": "12345",
+                "X-M2M-Origin": "AA"
+            },
+        };
+
+        setInterval(function() {
+            $.ajax(settings2).done(function(response) {
+                $('#testh5').text('비타도그 잔량 : ' + response["m2m:cin"]["con"] + '% 남아 있습니다.')
+            });
+        }, 5000);
+
+        var settings3 = {
+            "url": "http://203.253.128.161:7579/Mobius/PetMat/user1/medi3/la",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Accept": "application/json",
+                "X-M2M-RI": "12345",
+                "X-M2M-Origin": "AA"
+            },
+        };
+
+        setInterval(function() {
+            $.ajax(settings3).done(function(response) {
+                $('#testh6').text('물 잔량 : ' + response["m2m:cin"]["con"] + '% 남아 있습니다.')
+            });
+        }, 5000);
+
+        var bDisplay = true;
+
+        function doDisplay(val) {
+            document.getElementById("testp").innerText = "";
+            var con0 = document.getElementById("direct_spread");
+            var con1 = document.getElementById("reserve_spread");
+
+            if (val == 0) {
+                con0.style.display = 'block';
+                con1.style.display = 'none';
+            } else {
+                con1.style.display = 'block';
+                con0.style.display = 'none';
+            }
+        }
+
+        function delete_btn() {
+            document.getElementById("test10").hidden = true;
+            document.getElementById("delete").innerText = "삭제되었습니다.";
+            document.getElementById("here2").innerText = "5개";
+            setTimeout(() => {
+                document.getElementById("delete").innerText = "";
+
+            }, 3000);
+        }
+
+        function spread_clicked(value) {
+            if (value == 1) {
+                var settings = {
+                    "url": "http://203.253.128.161:7579/Mobius/PetMat/user1/spread",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Accept": "application/json",
+                        "X-M2M-RI": "12345",
+                        "X-M2M-Origin": "SsYSZ7UWwKb",
+                        "Content-Type": "application/vnd.onem2m-res+json; ty=4"
+                    },
+                    "data": "{\n    \"m2m:cin\": {\n        \"con\": \"1\"\n    }\n}",
+                };
+
+                $.ajax(settings).done(function(response) {
+                    document.getElementById("testp").innerText = "즉시분사 전송완료";
+                });
+            } else {
+                var settings = {
+                    "url": "http://203.253.128.161:7579/Mobius/PetMat/user1/reserve",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Accept": "application/json",
+                        "X-M2M-RI": "12345",
+                        "X-M2M-Origin": "SsYSZ7UWwKb",
+                        "Content-Type": "application/vnd.onem2m-res+json; ty=4"
+                    },
+                    "data": "{\n    \"m2m:cin\": {\n        \"con\": \"1001000_PM0300_터비덤_\"\n    }\n}",
+                };
+                $.ajax(settings).done(function(response) {
+                    document.getElementById("testp").innerText = "예약완료";
+                });
+            }
+
+        }
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
